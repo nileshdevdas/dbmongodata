@@ -1,1 +1,505 @@
 Day 6
+
+Importing data in your mysql 
+
+1. Download the classic models 
+2. once the class models is downloaded 
+	open a new sql editor in the DBBeaver :- 
+3.  paste the contents of the classic model sql 
+4.  alt + x (you should be connect to your mysql)
+	start your mysqld (if not running )
+	start you dbbeaver and get connected 
+	then open the sqleditor and the add the contents 
+	then only run alt + x 
+
+5. the class model should have got imported :- 
+	refresh 
+	Right click on the databases and just say refresh 
+------------------------------------------------------------------------------------------------------------------
+a) We saw that there is a database : 
+b) We have a appliation how does a appliacation connect to database 
+That SQL Statements needs to be invoked via a Java / Python / Node / C++/C# .net or some of code 
+then only data will be reteieved by the application ? 
+
+you will need to know first where is the database :- 
+ip : localhost
+what is the db port : 3306 
+database Name : classicmodels 
+user name " root"
+password : "" 
+data base Type : mysql 
+from a programming language you need to connect then you need a driver 
+JDBC :- Java Database Connectivity-----
+Version of my database:- Driver corresponds to the version : 
+------------------------------------------------------------------------------------------------------------------
+What is the application going to do with the database ? 
+a) Select Data and bring back to the user 
+b) insert/update/delete data as per requirement  // update , select , delete , insert 
+c) query views Table and view are select wise same : you cannot insert, update, delete from a view 
+d) What else can my application decide  
+	i) It may call procedures 
+	What is procedures / functions why do i need them :- 
+	wherever ther is large data manipulations this was dont with logic written in the database 
+	a procedure = a logic written in the db side 
+	procedure  method = input and returns output 
+		create procedure xyz (in , out):
+			xxxxxxxxx
+
+
+SELECT :  QUERY 
+			|------Statements  (Are literal statements and when they run they have full blown values with them 
+								  select * from employee where empid = 1
+								)
+
+									select * from empid where emptid = +" (deletr)"+ 
+
+			|------PreparedStatement
+							    select * from employee where empid = ? 
+UPDATE :  insert/Update /Delete 
+CALLABLE : Procedure call 
+
+How to write java program to connect to database :- ? 
+
+1. You first need to set you driver in your classpath 
+	You will need to download a appropriate driver and put in your classpath 
+
+2. Write Code to connect to our database 
+	STEP 1 : you will ned to first Load the Driver 
+	STep 2 : then you will need to do the connection with the Database 
+			*** most of the program fail or have issues because you open connectiosn and dont close it 
+				this is known as a connection leak : a connection will shut or hang you applicatioj 
+				if you open you connections and dont close them properly (LIMIT)
+
+	Step 3: You will need to Create Statement/PreparedStatement and Decide its action 
+			if the action is select   executeQuery()  // select works with executeQuery method 
+			if the action is update   executeUpdate(); insert/update/delete ---> execute Update
+
+	Step 4 : You have to also handle the exceptions ? 
+			a) DB May be down 
+			b) You may not be autthorized 
+			c)  your password may be bad 
+			d) you wrong query 
+
+
+
+
+
+1. There will be a database engine : 
+	MySQL 
+	Oracle 
+	SQLServer 
+	DB2 
+	Postgres
+
+2.  What are the objects that are created in a datbase 
+		Table 
+		View 
+		Sequences 
+		Triggers 
+		Functions / Procedures 
+
+3.   SQL =: 
+	  Select 
+	  INsert 
+	  Update 
+	  Delete 
+
+
+4.   min 
+	 max 
+	 avg 
+	 sum 
+	 count
+
+5.  Orderby asc desc  muliti coolm order 
+
+6.  Association 
+
+7.  contraints 
+		primary key 
+		unique 
+		foriegn key 
+		not null 
+		check constraints 
+
+
+8.  joins 
+		inner join 
+		left join 
+		right join 
+
+		select x  from join y 
+
+
+9.   group by 
+	 having 
+
+
+10.  truncate (allows me to delelte all rows)
+
+11.  create table 
+	 alter table 
+	 drop table 
+
+
+12.  Database also has types 
+
+
+13.  AUTO_INCREMENT , SEQUENCES 
+
+
+
+14.   Programatic connection to database ? 
+	JDBC  Programs 
+		Load the Driver 
+			Class.forName("Driver Class");
+			Connection con = DriverManager.getConnection(ur, , user, paswd);
+
+			two types of thing 
+				executeQuery 
+				excuteUpdate 
+
+
+15.  version where = ? is  having multiple like   = 
+
+
+16. DBBeaver, SQLWorkbench or tools (Clients to databae )
+
+17. -- is comment int sql file 
+
+18.   Connection , ResultSet, Statement ,   java.sql. programming : 
+ 		 java + drivers in my classpath 
+
+
+19.  Prepared Statements  
+
+=============================================================================================================
+What is noSQL Databases ? 
+
+noSQL ---> no SQL beyond SQL 
+
+what are the requirement of NOSQL Database..... 
+1.  Volume
+    by usage of horizontal scalling 
+    it divides the data in mulitple instance : 
+    a) We loose the Atomicity
+    b) These Database Eventual Consitency 
+
+0-10000                            10001 --20000                   20001 - 30000 
+Instance 1 							Instance 2 						Instance 3 
+
+NoSQL Runs on the Cheap COmmondity hw/ instance1 will have replica at somewhere else 
+
+2. Variety ? 
+	a) unknown strcuture --> What is going to come  
+	b) semistrcuture 
+	c) structured 
+
+
+3. velocity : 
+
+		Growth , Size of  frequency bu the data comes 
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Key Value Database 
+Allow you to do the action of key value  
+Key = value 
+
+===========================================================================================================================
+DOcument DB JSON 
+-----> MongoDB
+XML 
+employee -- adddrwss -- street 
+
+employee : {
+	address  : {
+		 street :  'M.G. Road'
+	}	
+} 
+where employee.adrress.street = 'M.G. Road'
+=============================================
+Columnar Database : 
+Cassandra 
+Primart Key Violation does not exist (UPSERT )
+
+===============================================
+Graph DB 
+
+===============================================
+
+
+
+
+
+Cassandra Columnar Database 
+Mongo Document Database 
+Riak  Key=Value Db 
+Neo4j Graph DB
+========================================================================================================================
+
+What do i loose in the database ?
+Atomicity (NO)
+Consitency (Eventual)
+
+
+What do i gain from these database ? 
+Volume
+Redundancy 
+Spread HOrizontal Accessibility 
+Speed 
+
+
+
+
+Grid Inmemory Databases (Caching Database)
+REDIS 
+Oracle Coherence 
+Active Spaces 
+
+
+
+
+
+Grid Cache db : 
+
+IN memory Db ? 
+
+=========================================================================================================================
+
+Mongo DB :- 
+IN mongo DB we will be using Document (Collections )
+
+
+|------------------Collection 
+					  |------- Documents 
+
+					  				 |----json 
+					  				 			{
+					  				 				_id : for internal reference 	
+					  				 			}
+
+
+Does mongo db provide driver for java 
+
+Start => Run -> services.msc -> MongoDB
+
+mysqld you started to th mysql ==> 
+
+mongod to start the mongo database :=> Data folder keep the data
+
+https://github.com/nileshdevdas/dbmongodata.git
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
