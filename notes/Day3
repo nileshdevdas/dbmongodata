@@ -1,0 +1,183 @@
+Objectives :- 
+1. HTML / Responsive Web Application Design 
+	CSS/HTML/Javascript/Responsive Libraries (Bootsrap.... )
+2. How to make debuggin on the browser side (Devetools)
+3. Using the The Browser as a Server -0--->  
+
+
+1. Html  ===> Simple Markup language 
+	<html>
+		<head>
+			<!-- invisible portion -->
+		</head>
+		<body>
+			<!-- body is visibile portion --> 
+		</body>
+	</html>
+
+2. we create different html : 
+	
+3.  CSS Whcih decorates 
+
+
+
+
+html
+css
+javascript 
+boostrap 
+Jquery 
+react
+
+
+1. Check if you have nodejs installed( Npm on windows is bundled with nodejs)
+2. Check if create-react-app is there if not install it globally using -g 
+	npm install -g create-react-app 
+
+3. once create-react-app is installed create a new application 
+	create-react-app <your-app-name> 
+
+4.  cd <your app> 
+	npm start 
+
+
+<root>
+	|----<App>
+		   |----->NavBar
+		   			|----other
+		   					 Calendar
+		   	     |
+		   	     Body 
+		   	     	|--- Calendar
+		   	     |
+		   	     Footer
+		   	     	 Calendar
+
+======================================================================================================
+React is Do DOM Manipulation 
+
+1. A ready made framework 
+	a) has patterns inside it 
+	b) it is maintained by somebody 
+	c) Well Documented 
+	d) Well Tested 
+	e) tool availibility 
+	f) Community Availibity 
+	g) Test support 
+
+2. React give me a loto component drivent architecture 
+
+<div  id="root">
+	<App>
+		<NavBar></NarBar>
+		<MainArea>
+			<News>
+				<Headlines></Headlines>
+			</News> 
+			<Movies></Movies>
+			<Reviews></Reviews>
+		</MainArea>
+		<Footer></Footer>
+	</App>
+</div>
+
+
+1. React Uses Javascript 
+2. React uses JSX 
+
+==========================================
+a) npm check 
+b) npm install -g create-react-app 
+c) create-react-app myapp 
+d) cd myapp 
+e) npm start 
+==========================================
+
+How does react Work : 
+
+<div id="root">
+</div>
+
+React will render the components in this root element the first element which 
+The Root of tyou Component Tree will get rendered in the 
+
+<div id="root">
+	<App/>
+</div>
+
+
+import React from 'react';
+
+class MyComponent extends React.Component {
+		
+	render(){
+		console.log(this.props.xxxxxxx)
+		return <button onClick={this.someAction}><button>
+	}
+
+	someAction(){
+		// action function ..... 
+	}
+
+}
+
+
+export default MyComponent;
+
+
+// to use the components 
+
+import MyComponent from './abc'
+
+
+<App>
+	<MyComponent xxxxxxx="Nilesh" />
+</App>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

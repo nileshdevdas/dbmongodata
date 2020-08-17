@@ -1,0 +1,842 @@
+# start --> run --> 
+# javac --> javac 
+# Eclipse/STS/Intelli-J
+# 
+1. SRP : Single Responsibility Principle 
+2. Open for extension  Closed for modification Principle 
+	Class -> 
+		// open for modification 
+		function doDrive(Vehicle v ){
+			v.drive();
+		}
+
+		class Car implements Vehicle {
+
+			function drive(){
+
+			}
+		}
+
+		class SuperCar implements Vehicle {
+
+			function drive(){
+			
+			}
+		}
+
+		class JetCar implements Vehicle 
+
+3.   Has A and IS-A  
+
+		Vehicle  
+		Car ---> Implements Vehicle 
+
+		List ->       DatabaseList
+					  Sequential 
+					  LinkedList 
+					  NonDuplicateList
+
+	Bank  bank = new HDFCBank ()_; 
+	Bank  bank = new DBBank();
+	Bank  bank = new ANyBank();
+
+
+	Dashboard 
+		p1
+		p2
+		p3
+
+
+
+
+
+
+
+SOLID : 
+1. Every single application will have single responsibility  (I cannot sell mangoes in bank )
+2. Open But Closed (Open for Extension but closed for modifiction )
+3. Every Single Contract is substitutable (IS-A)
+	List list =  new List(); // ordering ? undordered 
+	List list = new OrderedList(); 
+4. Interface Segregation ? 
+5. Dependecny Inversion 
+
+Microsoft for th cloud 
+
+
+I user CloudAbstractor ----> Microfot Cloud 
+							Google Cloud 
+
+
+class CloudAbstrraction {
+
+	
+}
+
+Factory.getInstance();
+
+java -DPSPDF
+
+
+
+1. We finished with SOLID Principles 
+	S-Single Responsiblity
+	O-Open but Closed 
+	L-Liskov Substitution 
+	I-Interface segregation
+	D-Dependency Inversion 
+
+2.  Setup Java Workspace 
+java :- 
+JDK 
+JRE (Used to run application ) ////  *** No compilation 
+--> .class /.jar / .war ----> 
+
+.java ---> .class--> zipped ---> jar ----> many combination ---> .war 
+
+What does my machine have java jdk / java jre ?
+javac / tools.jar (jdk)
+java / rt.jar / jre 
+
+32 bit ---> 1.5 
+64 bit ---> no limit 
+
+
+Where can i get java -> Sun->Oracle --> 
+OpenJDK 
+OpenJRE 
+
+OracleJDK 
+OracleJRE 
+
+
+When windows want to locate something from its file\folders 
+Varibale named PATH 
+
+
+1. We know how to find java in  our system and set the path 
+2. how to find the java version 
+	java -version 
+3. We need a tool 
+	a) Eclipse  (IDE)
+	b) Intillij Idea  (IDE)
+	c) Visual Studio Code  (Editor)
+	d) ... 
+	IDE (Integrated Development Environment)
+		a) Allows to debug 
+		b) Alows to have code assist 
+		c) Auto compile my code 
+		e) Suggesstions 
+		f) Dependency Management 
+
+4. PATH  v/s CLASSPATH 
+	So if OS finds its executable from the PATH Variable 
+	The Java Finds it Jar/Classes from CLASSPATH 
+	if you want to use a class name (Nilesh)
+	it either should exist in your Local Folder 
+	ort the location where it exist shoudl be appened to the CLASSPATH
+	Command Not Found in Windows -> 
+	Class Not Found In Java 
+--------------------------------------------------------------------------------------
+package - >=is a folder is collection of classes or orther sub package 
+X
+|-----com
+	    |--db 
+	    	|---login 
+	    		  |-- Login.java 
+
+	    |--vinsys
+	    	  |--auth
+	    	  	   |----Login.java
+
+-----------------------------------------
+fqn : com.db.login.Login
+
+CLASSPATH=d:\x\com\db\logi	
+
+package com.db.designpatterns;
+public class Application {
+    //object level fields accessiblit
+    String username;
+    // class level fileds accesibility
+    static String version= "111";
+    //  static block
+    static {
+        System.out.println("Static......");
+    }
+    // constructor  new Application(); invoked
+    public Application(){
+        System.out.println("Constructor");
+    }
+    // demo..... a static function Class.function
+    public static void demo(){
+        System.out.println("Demo......");
+    }
+    /// Object Method non static new Application().demo()
+    public void demo2(){
+        System.out.println("Demo.2 ");
+    }
+    public static void main(String[] args) {
+        Application = new Application(); 
+        a.demo2();
+        demo();
+        System.out.print(a);
+    }
+}
+
+
+
+====================================================================================================================
+1. SOLID 
+2. Java Refresher 
+   a) How to write classes 
+   b) How to Dev Environment 
+   c) Hot Execute Main Method 
+   d) Constrcutors 
+3. inheritence and abstraction :- 
+
+
+public class Employee {
+	
+	properties///// 
+	get/set 
+
+}
+
+class Manager extends Employee 	{
+	............... 
+}
+
+
+ChilClass Base/ParentClass 
+class extends AnotherClass 
+
+
+
+Bank was abstract : --- Contract 
+What to send 
+What to return 
+What to throw 
+
+What to do not how to do ? 
+HDFCBank 
+ICICBank
+
+Bank is my base abstraction :- 
+   HDFC 
+   ICICI 
+   DB
+
+Abstract Class : - 
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+1. Classes 
+	public class className {
+
+		public className(){
+
+		}
+
+	} 
+	 all     self     child      package
+	public, private, protected, default (none)
+
+2. Abstract Classes 
+	 Abstaract classes if there is any abstract method 
+
+3. Concrete Classes 
+		Concrete Classes can be instantiated
+4. Interfaces 
+		100% Contracts only no implementation 
+5. Overriding 
+	in the inheritence 
+6. OverLoading 
+	 local / inherited 
+
+7. static 
+	before object creation
+8. Constructors 
+	allows object creation 
+9. packages
+		acumuulation 
+10, Inheritece 
+		susbstitution 
+
+
+new () ===> New Object ---> 
+How many Object ? 
+
+
+
+
+
+SOLID :- 
+------------------------------------------------------------------------------
+=Java :																		 | 
+=																			 |
+=Design Patterns :-                                                          |
+=	Creational Patterns                                                      |
+=		|-----All related to creating Object                                 |
+=				Factory                                                      |
+=				Singleton                                                    |
+=				Prototype                                                    |
+=				Builder                                                      |
+=				........                                                     |
+=	Structural Patterns                                                      |
+=						Composition ----Inheritence                          |
+=	Behavioral Patterns                                                      |
+==============================================================================
+
+
+
+1. Interfaces : Contracts
+2. SOLID 
+3. Java 
+4. Refactoring 
+5. Test Driven Development:- 
+	 :-
+	 	expected v/s  actual 
+
+
+PDFParser :- Object -> 
+
+interface Element {
+	// features 
+}
+class AbstractParser implements Parser{
+
+public Element  createElement();
+}
+
+
+class  DildarParser etends AbstractParser{
+	
+	public Element createElement(){
+
+	}
+}
+
+class DiladarElement implements Element {
+	// features of the element 
+}
+<div></div> 
+
+
+Parser parser = Factory.getParser()
+
+
+Factory.getParser(){
+	
+	From Mys System find out the Available prser 
+	return that 
+
+}
+
+Factory - > Who knows what to create even how to creatre 
+AbstractFactory : What to create (Family of Object ) i dont know how 
+Singleton :- Single instance per JVM (Cache/Registry/Central Repo)
+Prototype : Cloneable 
+			object.clone();
+			Serilization / 
+
+			|-Employee  =->
+				 |----Department ==. 
+				 		 |---- Unit ==>
+				 		 		 |------Region =-=> 
+				 		 		 		  |-------- Area -=->
+
+
+When a object creation is difficult : or recreation is not possible and still you want a multi copy of that 
+object in your program for mulitple differnt state preservations the only way is to create a copy Object 
+
+a) Cloneable 
+b) Serializable
+
+Clone:Serialization 
+
+Creational Patterns 
+a) Factory | AbstractFactory 
+b) Single | Prototype 
+c) Builder 
+
+createEmplloyee()===>
+==============================================================================================================================
+Structural Patterns :- 
+Composition : Association :Inheritence 
+
+1. Adapter 
+2. Proxy 
+3. Composite 
+
+A) i am composing 
+b) inheriting 
+c) Assosiatig 
+
+-----
+
+1. Proxy 
+	a) Standin 
+	b) Delegate 
+
+
+Object --- Standin 
+
+
+									Subject:(xxxx) (IApplication)
+							      				|
+						--------		------------------
+						|						 |
+					 Proxy ---------->		 Proxy-----------> Target 
+					 a) Logging 
+					 b) Authentication 
+					 c) Interception 
+
+
+IApplication application = ApplicationFactory.getApplication();
+
+application.doSomething();
+
+						IApplication 
+
+
+						Factory
+
+						   LoggerProxy 
+
+
+						   AuthProxy 
+
+
+						   Target 
+
+
+
+
+
+
+
+When i have two object that do the right Job but i have the wrong interface i cant join them 
+
+Laptop --> UK ---> Pin 
+India --> convert 1 interfce the other interface format 
+Cnversion 
+
+When i have two differnet interface which needs to be combined i do adapter
+Class Adapter 
+Object Adapter 
+
+
+===================================================================================================================
+Microservices :-
+Programming Agnostic 
+API Converstation (Http)
+Stateless 
+Microservices Needs Eco-System
+Microservices Size is not micro in reality 
+Microservices can be implemneted using any  programming but the  idea is that the proptocol communitcate iop (HTTP)
+INtegration API Gateway 
+Obsservatvility (Dahsboar)
+Selective Scalbility 
+Autonomous
+Microservices will bring other issues : 
+Monitpring / Security / Management / (Services)
+
+Monolothic:-
+	a) Scalability is allo nothing 
+	b) Complex 
+--------------------------------------------------------------------------------------------------------------------------
+1. Wrote 1 Service using nodejs --> 
+2. Wrote 1 service using python --> 
+3. Write 1 service using java ---> 
+4. Created registry =--> Eureka
+5. Create a Dashboard = -> Hystrix 
+6. Logging a service 
+7. Blackout handling 
+8. Kubernetes / Cloud Foundry / Cloud products ---> AWS 
+----------------------------------------------------------------------------------------------------------------------------
+Microservices will also have patterns ? 
+Decomposition Patterns 
+	SRP:- 
+	Bank 
+	Inverntory 
+	---> Service must be decomposed by its business capabilities 
+			SubDomain 
+			Finance 
+				Apayables 
+				Account Recievables 
+	
+
+Integration Patterns 
+	API Gateway :- 
+
+Database Patterns
+	Database Per Service  : - 
+	Shared Database per Service : 
+	-----> Distributed dastase 
+		Mongo
+		Couch 
+		Cassandra 
+		noSQL (Not Only SQL DB )
+
+		Node 1             Node 2                 Node3       Node4   Node5  Node 6  node7 
+		--------------------------------------------------------------------------------------    (txservice)
+
+		10 ---> 20 --->30 
+
+		Node (10)  -----> node (20)  ----- node(30)
+
+
+
+
+
+
+
+
+
+
+
+
+
+Observability Patterns 
+Cross Cutting Concerns Patterns 
+
+
+
+
+
+
+
+Micro is not really Micro :- 
+Autonomouse
+Distributes 
+Scalbale 
+API HTTP 
+Slow 
+
+Decomposition Pattern 
+Integration 
+Single DB Per Service 
+Shard DB for Service 
+
+Observability 
+
+COnfiguration as A serervice 
+Eureka 
+CirvuitBreaker 
+
+V1 / V2
+
+
+
+
+Spring Boot -> 
+
+Microservice PAS PLatforms (Platoform As A Service)
+
+=========================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
