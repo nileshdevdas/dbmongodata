@@ -1,0 +1,427 @@
+Day 7_8ou
+
+1. need java 
+2. Download 
+		a) Team City / Jenkins 
+				CI Tool : For Continous Integration  
+		b) Nexus 
+				Artifactory 
+				How setup environments for Artifactories
+		c) Maven 
+			  Versmall installer : ZIp File (Gz file )
+		d) sonarqube 
+			    Server : either use downloaded server  // optional 
+			    		either use the Sonarcloud.io ()			    
+		e) plugin sonar lint
+				Sonar Lint is aplugin in eclipse / Intellij has to be installed 
+				internally from the plugin 
+		f) Git for windows 
+				git -version 
+
+
+1. Developer needs to write code 
+		IDE : - Eclipse / Intellij 
+
+2.  I need a Version Control System 
+		Centralized 
+		Decentralized 
+
+
+3.  Artifactory 
+
+
+Maven Project :- 
+
+A maven project is identified 
+	G -  Group ID   
+	A -  Artifact id 
+	V -  Version number 
+
+
+<dependency>
+
+	<groupid>com.vinsys</groupid>
+	<artifactid>dbgrads</artifactid>
+	<version>1.0</version>
+
+</dependency>
+
+
+pom.xml 
+
+Project Object Model :- 
+
+Maven is not the only build tool 
+Gradle also 
+
+
+
+
+
+
+
+
+
+
+mvn clean  : --- 
+mvn compile : --- 
+mvn test  : -- 
+
+
+
+
+
+
+
+
+
+mvn clean 	--- clean cache delete target 
+mvn compile  ---> compile files 
+mvn package  =-=-> jar / war creation 
+mvn test 	 -- junit tests 
+mvn verify  -> integration verification
+mvn install  --> install slocally 
+mvn deploy  ---> Deplys to artifactory 
+##############################################################################################################################
+1.  TDD is know test driven development 
+2.  We wrote the test first 
+3.  actual v/s exprected 
+	a) A negative test case will expect a exeption
+	b) A normal test case will expect a result compared against actual to be asserted 
+4.  We saw that every test case you write has to @nnotated    @Test 
+5.  there is a Method Fixture pre and Post actvitity that can be done before every test runs 
+		setup / teardown 
+		any method @Before and any Method @After these methods will get called 
+		post every  testRuns 
+6.  You can ignore tests using @Ignore which means the tests are skipped 
+7.  Testing is close related to maven 
+		we run mvn test to run the test from the command line all the test cases will run and build pass 
+		only when test cases pass 
+8.  The Testing has to pass and even if it negative condition which means e.g shoudl throw an exception and 
+	expecting a exception is a valid scenario-
+9.  maven can be used to aslo create certain amount reports 
+		html report 
+				mvn  surefire-report:report 
+10. Testing will provoke Coverage Report :
+		this really tells me wether the class under has really done job as all the lines are insure covered hence 
+		coverage report normally expose mines
+11. It also a singular static method that will get called only for time before testRuns this is genrally known as a Test 
+		@BeforeClass 
+	It also has a singlula staic method marked 
+		@AfterClass which willrun only after all the tests have completed 
+12. I can Execute a single test , ingnore single test 
+13. Using TestSuites :- 
+	What and how if i have more 1 Test Class and Want run all of the them together ? then how do i run a test suite  ?
+14. coverage reports 
+		Will give me exposure to how much lines in my code gone under test 
+		This gives me an assurity that there not  untested lines or unchartered teritories in my code : 
+		This requires two type 
+		a)  Intellij 
+		b)  Eclipse 
+
+15. 
+
+
+
+
+
+The application testing has majorily 2 Requirements 
+
+a) Unit Testing (Test Driven Development)
+
+  1) Test Cases 
+  2) Test Suites 
+  3) Skipable Test 
+  4) Automation Integration (Scripted integration)
+  5) Reports 
+  	   a) Test Reports 
+  	   b) Complettion Reports 
+  	   c) Coverage Reports 
+
+ Best Testing can be done using integrating maven and Junit + Jacoco 
+ 	Depth Coverage Reports 
+
+ Sonar Qube Report 
+
+===========================================================================================================
+
+1. To write a test cases i dont need the class 
+2. I can write the test on the basis of what i expect agains what is actual 
+
+3. even on day if i have write a empty test case that fails that is fine thing 
+	testCase ()
+	{
+		fails();
+	}
+
+4.  For This i need a testing framework 
+	does python test 
+
+
+-----------------------------------------------------------------------------------------------------------
+Python Java .net 
+===========================================================================================================
+
+
+Junit  : 
+How did junit come in our Application 
+
+<dependency>
+	<groupId>
+	<artifactId>
+	<version>
+</dependency>
+
+Pom And COnfigured a little plugin Management 
+
+--------------------------------------------------------
+
+Developer Writes Test Cases :- 
+He Converts his test Cases to TestSuites :- 
+Then he package the test in the git and commits even the test 
+Developer also add some feature of coverage reports 
+For coverage report developer is adding the a dependency jacoco 
+<build>
+	<plugins>
+		<plugin>
+			<artifact></artifact>
+			<goals>
+				<goal></goal>
+			</goals>
+		</plugin>
+	</plugins>
+</build>
+===========================================================
+The Application will require also import step that is known as mocking 
+I will mock if the required thing is not available 
+YOu will have all the services in the world running when you do the unit testing ? 
+All the dependencies will it be running when you do the testing ? no 
+
+Testing Does not require all the dependencies the dependencies can be mocked and java provides a mocking 
+application library which is known as mockito 
+To Add mockito to you system you will need to either put in your class path or if you are using the maven 
+add it as a dependency in the pom.xml 
+
+Without having the actual target object because u dont to test the target object you want to test your code 
+
+
+
+1. What is TDD  / Test Drive Development 
+2. JUnit 
+3. @Test  / @Suite / @SuiteClasses  / @RunWIth @/Ignore / @Before  / @After  / @BeforeClass /@AfterClass
+4. Unittests can be integrated with maven with sonar and with cid cd piple 
+5. expected v/s  actual 
+6. Unit tests can make use of mock applications the 
+	stub 
+	fakes 
+	dummies 
+	doubles 
+	Spy 
+
+7. The Application undertest is important and should have a proper coverage 
+8. Beacuse of maven and unit- tests (Coverage reports )
+9. Because of Unit Test we are able to get the Mines and Untested code as well copy / paste dupliccates 
+10. Proximity of the vulnerability 
+11. Html base Coverage report 
+12. Security Reports 
+13. Test Can run in timed mode SLA Driven 
+14. We can alos use selenium for selenium testing which means we can be able to use the selenium for the 
+	usage of selenium(AUtomation ) AUtomatic broswser open and close 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
